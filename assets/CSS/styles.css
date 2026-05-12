@@ -151,6 +151,16 @@ header {
     }
 }
 
+/* **** */
+/* MARK: Over mij
+/* *** */
+
+#over-mij {
+    img {
+        max-width: 10vw;
+    }
+}
+
 
 /* **** */
 /* MARK: Leerdoelen
@@ -226,7 +236,20 @@ header {
     }
 
     .leerdoelen-container {
-        
+        display: grid;
+        place-items: center;
+
+        article {
+            width: 90%;
+            height: 60%;
+            border-radius: 4rem;
+            padding: 2rem;
+            box-sizing: border-box;
+            
+            &:first-of-type {
+                background-color: var(--blue-contrast);
+            }
+        }
     }
 }
 
