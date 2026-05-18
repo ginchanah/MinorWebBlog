@@ -249,6 +249,12 @@ header {
             &:first-of-type {
                 background-color: var(--blue-contrast);
             }
+            &:nth-of-type(2) {
+                background-color: var(--green-contrast);
+            }
+            &:nth-of-type(3) {
+                background-color: var(--red-contrast);
+            }
         }
     }
 }
