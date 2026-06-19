@@ -18,7 +18,7 @@
     --border-radius: 20px;
     --border: 3px solid black;
 
-    --box-shadow:
+    --box-shadow: 0.4rem 0.4rem 0 var(--black);
 }
 
 /* **** */
@@ -32,6 +32,18 @@
 
 * {
     font-family: "Jersey 10", "Trebuchet MS", "Arial", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+p {
+    font-size: clamp(1.3rem, 4vw, 1.5rem);
 }
 
 /* **** */
@@ -74,11 +86,7 @@ header {
         width: 90vw;
         height: min-content;
         background: var(--main-color);
-        border-radius: var(--border-radius);
-        border: var(--border);
         position: relative;
-
-        box-shadow: 0.4rem 0.4rem 0 var(--black);
 
         .closing-button {
             top: 0px;
@@ -106,21 +114,149 @@ header {
 
 main {
     display: grid;
+    justify-items: center;
     grid-auto-flow: dense;
 }
 
 /* ********** */
-/* MARK: general classes
+/* MARK: utility classes
 /* ********** */
+
+figure {
+    margin: 0;
+
+    img {
+        display: block;  
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+.black-border {
+    border-radius: var(--border-radius);
+    border: var(--border);
+    overflow: clip;
+}
+
+.box-shadow {
+    box-shadow: var(--box-shadow);
+}
+
+.input {
+    margin: 0;
+    border: var(--border);
+    background: var(--main-color);
+    padding: 0.2rem;
+}
+
 
 .white-on-green-container {
     display: grid;
-    width: max-content;
+    width: 90vw;
 }
 
-.white-line {
+.white-heading {
     display: flex;
+    align-items: center;
     width: 100%;
     height: 3rem;
     background: var(--main-color);
+    padding: 0 1rem;
+    border-bottom: var(--border);
+
+    h2 {
+        margin: 0;
+    }
+}
+
+.green-content {
+    background: var(--secondary-color);
+    display: grid;
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+}
+
+/* ********* */
+/* MARK: Profile 
+/* ********* */
+
+.profile {
+
+    figure {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 100/70;
+
+        img {
+            object-position: 50% 7%;
+
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .general-info {
+        display: flex;
+        justify-content: space-between;
+
+        .name {
+            width: 40%;
+        }
+
+        .flag-p-container {
+            display: grid; 
+            min-width: 40%;  
+            grid-template-columns: 3fr 6fr;  
+        }
+    
+        .flag {
+            display: grid;
+            height: 100%;
+            grid-template-rows: 1fr 1fr 1fr;
+    
+            div:first-of-type {
+                background: black;
+            }
+    
+            div:nth-of-type(2) {
+                background: red;
+            }
+    
+            div:nth-of-type(3) {
+                background: gold;
+            }
+        }
+    
+        
+    }
+
+
+    .hearts-container {
+        display: flex;
+        .heart {
+            appearance: none;
+            border: none;
+            padding: 0;
+            background: none;
+            cursor: pointer;
+
+            width: 2rem;
+            aspect-ratio: 1;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+
+            background-image: url(/static/media/heart-seethrough.svg);
+
+            &.is-active {
+                background-image: url(/static/media/heart-red.svg);
+            }
+        }
+    }
+
 }
