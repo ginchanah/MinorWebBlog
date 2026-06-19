@@ -1,0 +1,126 @@
+:root {
+    --light-blue: oklch(0.7824 0.1159 240.83);
+    --light-yellow: oklch(0.8971 0.074 68.04);
+    --light-orange: oklch(0.7882 0.1209 45.83);
+    --light-pink: oklch(0.8647 0.0666 8.93);
+    --light-green: oklch(0.8401 0.0526 152);
+    --white: oklch(1 0 0);
+    --black: oklch(0 0 0);
+
+    --gradient-1: var(--light-blue);
+    --gradient-2: var(--light-yellow);
+    --gradient-3: var(--light-orange);
+    --gradient-4: var(--light-pink);
+
+    --main-color: var(--white);
+    --secondary-color: var(--light-green);
+
+    --border-radius: 20px;
+    --border: 3px solid black;
+
+    --box-shadow:
+}
+
+/* **** */
+/* MARK: Fonts
+/* **** */
+
+@font-face {
+    font-family: "Jersey 10";
+    src: url(/assets/fonts/Jersey_10/Jersey10-Regular.ttf);
+}
+
+* {
+    font-family: "Jersey 10", "Trebuchet MS", "Arial", sans-serif;
+}
+
+/* **** */
+/* MARK: Body
+/* **** */
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: var(--gradient-1);
+    background: linear-gradient(
+            to bottom right, 
+            var(--gradient-1) 0%, 
+            var(--gradient-1) 25%, 
+            var(--gradient-2) 25%, 
+            var(--gradient-2) 50%, 
+            var(--gradient-3) 50%, 
+            var(--gradient-3) 75%, 
+            var(--gradient-4) 75%);
+}
+
+/* **** */
+/* MARK: Header
+/* **** */
+
+header {
+    width: 100vw;
+    height: min-content;
+    display: grid;
+    place-items: center;
+
+    .h1-container {
+        box-sizing: border-box;
+        margin: 20px 0;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90vw;
+        height: min-content;
+        background: var(--main-color);
+        border-radius: var(--border-radius);
+        border: var(--border);
+        position: relative;
+
+        box-shadow: 0.4rem 0.4rem 0 var(--black);
+
+        .closing-button {
+            top: 0px;
+            left: 5px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(1.5rem, 9vw, 3.5rem);
+        }
+
+        svg {
+            height: clamp(1.5rem, 9vw, 3rem);
+            width: max-content;
+        }
+    }
+    
+
+}
+
+
+/* **** */
+/* MARK: Main
+/* **** */
+
+main {
+    display: grid;
+    grid-auto-flow: dense;
+}
+
+/* ********** */
+/* MARK: general classes
+/* ********** */
+
+.white-on-green-container {
+    display: grid;
+    width: max-content;
+}
+
+.white-line {
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    background: var(--main-color);
+}

@@ -1,0 +1,23 @@
+---
+import Header from "../components/Header.astro"
+import Profile from "../components/Profile.astro"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="/public/assets/styles/styles.css">
+		<title>Maja Wendelin</title>
+	</head>
+	<body>
+		<Header/>
+		<main>
+			<Profile />
+		</main>
+	</body>
+	<script src="/public/assets/js/index.js" is:inline></script>
+</html>
