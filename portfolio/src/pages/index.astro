@@ -1,13 +1,14 @@
 ---
 import Header from "../components/Header.astro"
 import Profile from "../components/Profile.astro"
+import Project from "../components/Project.astro"
+import RadioSelect from "../components/RadioSelect.astro"
 ---
 
-<html lang="en">
+<html lang="NL">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="stylesheet" href="/public/assets/styles/styles.css">
@@ -17,6 +18,127 @@ import Profile from "../components/Profile.astro"
 		<Header/>
 		<main>
 			<Profile />
+
+			<section id="carousel-1" class="projects carousel" role="region" aria-labelledby="carousel-1-title">
+				<h2 id="carousel-1-title" class="visually-hidden">Alle vakken van de minor Web Design and Development</h2>
+
+				<Project
+					title="CSS"
+					imgSrc="static/media/CSS.png"
+					imgAlt="A screenshot of my website for the CSS project, a bee that can walk!"
+					pageLink="https://ginchanah.github.io/CSS/"
+				>
+					<p slot="short">
+						"CSS to the rescue"! Zonder JavaScript en met experimentele en nieuwe CSS features een hoop coole dingen maken!
+					</p>
+
+					<div slot="long">
+						<!-- (nieuwe inzichten) -->
+						<p>Tijdens "CSS to the rescue" heb ik enorm veel geleerd. Ik dacht dat al best wat CSS kennis had opgebouwd maar er is een hele nieuwe wereld voor me open gegaan.</p>
+						<p>Kwa nieuwe technieken heb voornamelijk geleerd met @layer en @property rules te werken, met CSS nesting en calc(). Maar het grootste was natuurlijk de animatie zelf! Ik had CSS animaties tot nu toe nog een beetje genegeerd, maar ik ben er nu ernom diep ingedoken en zo veel geleerd over het opbouwen van een skelet voor het bewegen van poppetjes.</p>
+						<p>Er kan zo veel met alleen maar CSS! Ik heb erg genoten van dit vak.</p>
+					</div>
+				</Project>
+				
+				<Project
+					title="Sprint 0"
+					imgSrc="static/media/sprint0.png"
+					imgAlt="A screenshot of my website for the Sprint 0 project, myself as a CSS and HTML only illustration!"
+					pageLink="https://ginchanah.github.io/Sprint0/"
+				>
+					<p slot="short">
+						Het allereerste vak van de minor! Toen dacht ik nog dat ik al best goed was met code... oh sweet summer child.
+					</p>
+
+					<div slot="long">
+						<!-- (nieuwe inzichten) -->
+						<p>Tijdens dit vak ben ik er voornamelijk achter gekomen dat ik al wel een basis heb met code, maar dat er nog zo veel meer is om te leren. Ik heb me voor het eerst bezig gehouden met view transitions, en ook al waren ze in deze website eigenlijk niet perse nodig geweest ben ik toch blij dat ik nu weet hoe dat moet en opent het allemaal nieuwe mogelijkheden! 🙂</p>
+					</div>
+				</Project>
+
+				<Project
+					title="Browser Technologies"
+					imgSrc="static/media/bt.png"
+					imgAlt="A small part of an online tax form."
+					pageLink="https://ginchanah.github.io/BrowserTechnologies/"
+				>
+					<p slot="short">
+						Een erfbelastingsformulier in de huisstijl van de Nederlandse Spoorwegen. Waarom niet?
+					</p>
+
+					<div slot="long">
+						<!-- (nieuwe inzichten) -->
+						<p>Ik me had nog nooit eerder zo verdiept op error states, en ik heb nu vooral door dat het echt lastig is om goed te valideren. Er heel veel dingen kunnen tegen elkaar in werken, en dat was best vervelend om uit te zoeken. Zodra je JS validatie toevoegd, doet de CSS validatie raar, maar soms is alleen CSS niet genoeg... Ik heb echt respect voor goede forms.</p>
+					</div>
+				</Project>
+
+				<Project
+					title="Hackathon"
+					imgSrc="static/media/hackathon.png"
+					imgAlt="A black hole"
+					pageLink="https://diegor03.github.io/Hackton_2026_Team_2/"
+				>
+					<p slot="short">
+						Een heel zware website voor het SRON satelliet project "NEBULA Xplorer".
+					</p>
+
+					<div slot="long">
+						<!-- (nieuwe inzichten en inbrengst) -->
+						<p>De hackathon was heel intens. Ik heb me verdiept in scroll animaties, terwijl ik dat hiervoor eigenlijk nog helemaal niet had gedaan. Ik heb daarom in een week scroll animaties geleerd en zo veel mogelijk toegepast, maar ik ben echt trots met hoe ver ik ben gekomen in een week. Het was wel echt zwaar werk, elke dag tot 20:00 uur doorwerken, en steeds weer bugs oplossen die door de samenwerking gebeurden. Maar ik ben uiteindelijk heel blij met wat we hebben gemaakt, ook al hebben we niet gewonnen.</p>
+						<p>Zelf was ik verantwoordelijk voor de "satellite-rotation" en "satellite-steps" sections.</p>
+					</div>
+				</Project>
+
+				<Project
+					title="Human Centered Design"
+					imgSrc="static/media/hcd.png"
+					imgAlt="A black website with no content. At least not for the seeing!"
+					pageLink="https://ginchanah.github.io/HCD/"
+				>
+					<p slot="short">
+						Een website alleen voor Ihab. Niet voor jou!!
+					</p>
+
+					<div slot="long">
+						<!-- (nieuwe inzichten) -->
+						<p>HCD vond ik een heel leuk vak! Ik ben al sinds mijn tweede jaar van CMD door Vasilis enthousiast over toegankelijkheid, en eigenlijk heb ik toen al het idee bedacht, dat ik graag een spelletje voor en blind persoon wilde maken. En toen we HCD kregen werd ik bij Ihab ingedeelt, die perfect met Screenreaders kan omgaan, dus hij was de perfecte doelgroep! Ik heb door dit vak echt geleerd hoe je een website maakt niet voor jezelf maar voor iemand anders, en hoe je op basis van de wensen van andere mensen creatieve oplossingen kan zoeken. Je bedenkt toch echt andere dingen als een design niet ook aan je eigen wensen moet voldoen. Ik had het heel erg naar mijn zin met mijn screenreader spelletje en Ihab ook!</p>
+					</div>
+				</Project>
+
+				<Project
+					title="API"
+					imgSrc="static/media/api.png"
+					imgAlt="A DnD race selector, with every race in a circle around the selected race. Every race is displayed by a fancy scribbly text and an emoji that I thought matched their vibe."
+					pageLink="https://api-website-20ns.onrender.com/"
+				>
+					<p slot="short">
+						Een incomplete DnD character builder. Zo veel dingen die elkaar beïnvloeden, zo veel gedoe..
+					</p>
+
+					<div slot="long">
+						<!-- (nieuwe inzichten) -->
+						<p>Ik heb met API niet zo ver gekomen als ik wilde, maar DnD Character builders zijn natuurlijk heel erg uitgebreid en ik kon maar zoveel doen binnen de tijd die gegeven was. Maar ik vond het een heel leuk project en ook erg interesant om te zien hoe ingewikkeld het is om met zoveel data te werken die wordt beïnvloed door elkaar. Die logica uit te denken was heel leuk maar ook echt zwaar. En wat ik nooit meer ga doen: te laat beginnen aan mijn vormgeving!! Ik was heel lang bezig met alleen maar techniek voordat ik aan de vormgeving begon en daar kreeg ik super veel stress van omdat het voelde alsof ik nog niks had gedaan. Ik ben toch een best visueel persoon.</p>
+					</div>
+				</Project>
+
+				<Project
+					title="Meesterproef"
+					imgSrc="static/media/meesterproef.png"
+					imgAlt="A screenshot of the homepage of the glossary of terms that describe 'the hybrid city'"
+					pageLink="https://glossary-inter-facing-the-hybrid-city.onrender.com/"
+				>
+					<p slot="short">
+						Een website vol met ingewikkelde termen en coole animaties. 😎
+					</p>
+
+					<div slot="long">
+						<!-- (nieuwe inzichten en inbrengst) -->
+						De meesterproef was een uitdaging en ergens toch een van mijn favoriete projecten van de hele minor. Ik had eerder met Wordpress gewerkt, dus ik was al bekend met CMS systemen, maar ik heb nog nooit van scratch voor een CMS moeten ontwerpen. En ik vond het verassend genoeg erg leuk. Ik had niet verwacht dat ik het leukste aan dit project zou vinden om een data structuur op te zetten en toch was het zo. Ik heb me heel erg verdiept in astro en de component structuur van onze website en ik heb alle technischen uitdagingen vastgehouden in een uitleg document voor onze opdrachtgever en mogelijke toekomstige developers. En op deze manier is deze creatieve opdracht voor mij een van de meest technische uitdagingen geworden.
+					</div>
+				</Project>
+			</section>
+
+			<RadioSelect title="Leerdoelen"/>
 		</main>
 	</body>
 	<script src="/public/assets/js/index.js" is:inline></script>
