@@ -1,0 +1,13 @@
+---
+interface Props {
+  id: string;
+  label: string;
+}
+
+const { id } = Astro.props;
+---
+
+<article id={id} role="tabpanel">
+  <slot />
+</article>
+

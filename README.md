@@ -1,10 +1,43 @@
-# MinorWebBlog
-everything about the minor Web Design and Development
+# Astro Starter Kit: Minimal
 
+```sh
+npm create astro@latest -- --template minimal
+```
 
-- Wat van de Weekly Nerd sprekers ga je meenemen, waarmee wil je gaan oefenen...
-- De uitkomst van Sprint 0 met daarbij jouw inbreng en nieuwe inzichten.
-- De uitkomst van de Hackaton met daarbij jouw inbreng en nieuwe inzichten.
--  uitkomst van de Vakken met daarbij jouw nieuwe inzichten.
-- Een reflectie (2/3) hoe het tot nu tot gaat (grootste leermomenten, viel mee, nog lastig, trots op...).
-- Drie persoonlijke leerdoelen voor de meesterproef. Die worden onderdeel van de beoordeling. Goed om persoonlijke leerdoelen op verschillende vlakken te kiezen: bijv. inhoud, samenwerken, tooling, lef ... of andere competenties. Geef ook aan hoe je van plan bent om aan elk leerdoel te werken tijdens de meesterproef.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
+
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

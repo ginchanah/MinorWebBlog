@@ -1,0 +1,93 @@
+---
+interface Tab {
+  id: string;
+  label: string;
+}
+
+interface Props {
+  title: string;
+  containerId: string;
+  tabs: Tab[];
+}
+
+const { title, containerId, tabs } = Astro.props;
+---
+
+<section id={containerId} class="tab-container white-on-green-container black-border border-radius">
+  <div class="white-heading">
+    <h2>{title}</h2>
+  </div>
+
+  <div class="green-content tab-info-container">
+    <div class="tablist-container">
+      <div class="tab-list-wrapper">
+        <div class="tab-list" role="tablist" aria-label={title} aria-orientation="horizontal">
+          {tabs.map((tab, index) => (
+            <div class="input-container">
+              <input 
+                id={`${tab.id}-input`}
+                type="radio" 
+                role="tab" 
+                aria-controls={tab.id}
+                aria-selected={index === 0 ? "true" : "false"}
+                name={containerId}
+                checked={index === 0}
+              >
+              <label for={`${tab.id}-input`}>{tab.label}</label>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  
+    <div class="tab-panels-container black-border">
+      <slot />
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ containerId }}>
+  function initTabs(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const tabs = container.querySelectorAll('[role="tab"]');
+    const panels = container.querySelectorAll('[role="tabpanel"]');
+
+    // Hide all panels initially
+    panels.forEach(panel => {
+      panel.hidden = true;
+    });
+
+    // Show first panel
+    const firstTab = tabs[0];
+    if (firstTab) {
+      const firstPanelId = firstTab.getAttribute('aria-controls');
+      const firstPanel = document.getElementById(firstPanelId);
+      if (firstPanel) {
+        firstPanel.hidden = false;
+      }
+    }
+
+    // Add change listeners for radio buttons
+    tabs.forEach(tab => {
+      tab.addEventListener('change', () => {
+        // Deselect all tabs and hide all panels
+        tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+        panels.forEach(panel => {
+          panel.hidden = true;
+        });
+
+        // Select clicked tab and show corresponding panel
+        tab.setAttribute('aria-selected', 'true');
+        const panelId = tab.getAttribute('aria-controls');
+        const panel = document.getElementById(panelId);
+        if (panel) {
+          panel.hidden = false;
+        }
+      });
+    });
+  }
+
+  initTabs(containerId);
+</script>

@@ -1,0 +1,39 @@
+---
+const {
+    title,
+    imgSrc,
+    imgAlt = '',
+    pageLink = '',
+} = Astro.props;
+---
+
+<article class="project slide" role="tabpanel">
+    <div class="slide-content black-border white-on-green-container border-radius">
+
+        <div class="white-heading">
+            <h3>Vakken: {title}</h3>
+        </div>
+    
+        <div class="green-content">
+            <figure class="photo black-border">
+                <img src={imgSrc} alt={imgAlt} class="project-image" />
+            </figure>
+            <div class="project-short">
+                <slot name="short" />
+            </div>
+    
+            <a href={pageLink}>Ga naar de website!</a>
+        
+            <details class="project-details">
+                <summary class="project-toggle">
+                    Meer lezen
+                </summary>
+        
+                <div class="project-long">
+                    <slot name="long" />
+                </div>
+            </details>
+        </div>
+    </div>
+
+</article>
