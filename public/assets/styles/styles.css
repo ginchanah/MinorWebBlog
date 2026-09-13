@@ -90,138 +90,6 @@
         margin: 0;
     }
 
-
-    /* *** */
-    /* MARK: Carousel
-    /* *** */
-
-    /* src: https://blog.logrocket.com/build-image-carousel-scratch-vanilla-javascript/ */
-
-    /* Carousel Container */
-    .carousel {
-        position: relative;
-        width: 100%;
-    }
-
-    /* Carousel Inner - Holds all slides and buttons */
-    .carousel-inner {
-        overflow-x: clip;
-        position: relative;
-        height: auto;
-        width: 100%;
-    }
-
-    /* Individual Slide */
-    .slide {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: transform 0.5s ease-in-out;
-    }
-
-    /* active slide: back in flow so it defines height */
-    .slide.is-active {
-        position: relative; /* or static */
-    }
-
-    /* Slide Content */
-    .slide-content {
-        position: relative;
-        z-index: 5000;
-        width: 100%;
-        height: 100%;
-    }
-
-    /* Carousel Buttons - Previous and Next */
-    .carousel-btn {
-        position: absolute;
-        top: 20rem;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.6);
-        color: white;
-        border: none;
-        width: 2.5rem;
-        aspect-ratio: 1;
-        border-radius: 99rem;
-        font-size: 1.5em;
-        cursor: pointer;
-        z-index: 10;
-        transition: background 0.3s ease;
-    }
-
-    .carousel-btn:hover {
-        background: rgba(0, 0, 0, 0.9);
-    }
-
-    .carousel-btn:focus-visible {
-        outline: 2px solid white;
-        outline-offset: 2px;
-    }
-
-    .carousel-btn--prev {
-        left: 0em;
-    }
-
-    .carousel-btn--next {
-        right: 0em;
-    }
-
-
-    /* **** */
-    /* MARK: TabPanel
-    /* ***** */
-
-    [role="tab"] {
-            margin: 0;
-            cursor: pointer;
-            transition: all 0.2s ease;
-    }
-
-    [role="tabpanel"] {
-        animation: fadeIn 0.2s ease;
-    }
-
-    .input-container {
-        display: flex;
-        gap: 0.5rem;
-    }
-
-    .tablist-container {
-        display: grid;
-        place-items: center;
-    }
-
-    .tab-list {
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-
-        label {
-            font-size: clamp(0.8rem, 4.5vw, 1.3rem);
-        }
-        
-    }
-
-    .tab-panels-container {
-        padding: 1rem;
-        background-color: var(--main-color);
-    }
-
-
-    @keyframes fadeIn {
-        from {
-        opacity: 0;
-        }
-        to {
-        opacity: 1;
-        }
-    }
-
-
-
-
-
     
 }
 
@@ -277,7 +145,7 @@
         display: flex;
         align-items: center;
         width: 100%;
-        height: 4rem;
+        height: clamp(2rem, 14cqw, 3rem);
         background: var(--main-color);
         padding: 0 1rem;
         border-bottom: var(--border);
@@ -285,7 +153,7 @@
         h2, h3 {
             margin: 0;
             max-width: 100%;
-            font-size: clamp(1rem, 7cqw, 2.3rem);
+            font-size: clamp(1rem, 7cqw, 2rem);
         }
     }
     
@@ -388,7 +256,8 @@
     
     .profile {
 
-        max-width: 30rem;
+        max-width: 20rem;
+        justify-self: start;
     
         figure {
             width: 100%;
@@ -511,97 +380,14 @@
             }
         }
 
-
+        .green-content {
+            padding-bottom: 1.5rem;
+        }
         
     
     }
     
     
-    
-    
-    
-    /* ******** */
-    /* MARK: Projects/carousel
-    /* ******** */
-    
-    .projects {
-        container-type: inline-size;
-
-        width: clamp(0rem, 90vw, 30rem);
-
-        --bottom: 4rem;
-    }
-
-    .slide {
-        display: grid;
-        place-items: center;
-        
-
-    }
-
-    .slide-content {
-        width: 80%;
-    }
-
-    @media (width <= 450px) {
-        .carousel-btn {
-            top: auto;
-            bottom: calc(var(--bottom) * -1);
-        }
-
-        .slide {
-            margin-bottom: calc(var(--bottom) - 1rem);
-        }
-
-        .slide-content {
-            width: 100%;
-        }
-
-    }
-
-
-
-    /* ****** */
-    /* MARK: Leerdoelen
-    /* ***** */
-
-    #leerdoelen {
-        container-type: inline-size;
-        
-        @container (39rem <= width) {
-            .tab-info-container {
-                display: grid;
-                grid-template-columns: max-content 1fr;
-            }
-
-            .tab-list {
-                display: flex;
-                flex-direction: column;
-            }
-
-            
-        }
-    }
-
-
-
-    /* ****** */
-    /* MARK: Gastsprekers
-    /* ***** */
-
-    #gastsprekers {
-        container-type: inline-size;
-
-        .tab-list {
-            max-width: 70vw;
-            height: max-content;
-            flex-wrap: wrap;
-
-            label {
-                font-size: clamp(1rem, 4.5vw, 1.3rem);
-            }
-        }
-    }
 
     /* **** */
     /* MARK: Likes Dislikes
@@ -615,131 +401,6 @@
 
             ul {
                 margin: 0;
-            }
-        }
-    }
-
-    /* **** */
-    /* MARK: Gesprekken
-    /* ***** */
-
-    #gesprekken {
-
-    }
-
-    /* ***** */
-    /* MARK: Media Queries 
-    /* ****** */
-
-     @media (width >= 630px) {
-        .projects {
-            width: clamp(0rem, 100vw, 37rem);
-        }
-     }
-
-    @media ( width >= 822px) {
-        main {
-            grid-template-columns: 1fr 1.5fr;
-            padding: 0 5vw;
-        }
-        .profile {
-            grid-column: 1/2;
-            grid-row: 1/2;
-
-            width: 100%;
-        }
-
-        .projects {
-            grid-column: 2/3;
-            grid-row: 1/4;
-
-            max-width: 100%;
-
-        }
-
-        .likes-dislikes {
-            grid-row: 4/5;
-        }
-
-        #leerdoelen {
-            grid-column: 1/-1;
-            grid-row: 5/6;
-        }
-
-        #gastsprekers {
-            grid-column: 1/-1;
-            grid-row: 6/7;
-        }
-
-        #gesprekken {
-            grid-column: 1/-1;
-            grid-row: 7/8;
-        }
-
-        body:has(details[open]) {
-            .likes-dislikes {
-                grid-column: 1/2;
-            }
-
-            .likes {
-                grid-row: 2/3;
-            }
-
-            .dislikes {
-                grid-row: 3/4;
-            }
-        }
-    }
-
-    @media (width >= 1200px) {
-         main {
-            grid-template-columns: 1fr 1.5fr 0.8fr;
-        }
-
-        .profile {
-            grid-row: 1/4;
-            grid-column: 1/2;
-        }
-
-        .projects {
-            grid-row: 1/4;
-            grid-column: 2/3;
-            max-width: 100%;
-        }
-
-        .likes-dislikes {
-            grid-column: 3/4;
-        }
-
-        .likes {
-            grid-row: 1/2;
-        }
-
-        .dislikes {
-            grid-row: 2/3;
-        }
-
-        #leerdoelen {
-            grid-row: 4/5;
-            grid-column: 1/-1;
-        }
-
-         #gastsprekers {
-            grid-row: 5/6;
-            grid-column: 1/-1;
-        }
-
-        body:has(details[open]) {
-            .likes-dislikes {
-                grid-column: 3/4;
-            }
-
-            .likes {
-                grid-row: 1/2;
-            }
-
-            .dislikes {
-                grid-row: 2/3;
             }
         }
     }
