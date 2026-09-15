@@ -254,7 +254,8 @@
         justify-items: center;
         grid-auto-flow: dense;
     
-        gap: 2rem;
+        gap: 50px;
+        margin-bottom: 50px;
     }
     
     
@@ -263,9 +264,6 @@
     /* ********* */
     
     .profile {
-
-        max-width: 20rem;
-        justify-self: start;
     
         figure {
             width: 100%;
@@ -363,7 +361,7 @@
                     border: var(--border);
     
                     div:first-of-type {
-                        background: var(--light-yellow);
+                        background: var(--light-blue);
                     }
     
                     div:nth-of-type(2) {
@@ -401,6 +399,7 @@
     /* ***** */
     .likes-dislikes {
         width: 100%;
+        max-width: 90vw;
         background: var(--main-color);
 
         .content {
@@ -414,7 +413,7 @@
 
 
      /* **** */
-    /* MARK: Likes Dislikes
+    /* MARK: Projects
     /* ***** */
 
     .projects {
@@ -428,19 +427,28 @@
         grid-auto-flow: row dense;
 
         @media (width > 400px) {
-            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
         }
       
 
         .project{
             position: relative;
-            max-width: 100%;
             max-height: 100%;
+            max-width: 90vw;
+
+            @media (width < 60rem) {
+                min-width: 90vw;
+            }
+
+            
 
             &:has(details[open]) {
 
-                >div {
-                    max-height: calc(100% - 25px);
+                @media (width > 60rem) {
+
+                    >div {
+                        max-height: calc(100% - 25px);
+                    }
                 }
             }
 
@@ -475,6 +483,7 @@
                     width: clamp(17rem, 100%, 100%);
                     grid-column: 1 / -1;
                     grid-row: 1 / -1;
+                    aspect-ratio: 1;
 
                     img {
                         max-width: 100%;
@@ -505,25 +514,50 @@
 
                 .project-layout {
                     grid-template-columns: 1fr 1fr;
+                    
+
+                    @media (width < 60rem) {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: max-content max-content max-content 3rem max-content;
+                    }
+
+                    
 
                     .photo {
                         grid-column: 1/2;
+
+                        @media (width < 60rem) {
+                            grid-row: 1/5;
+                        }
                         
                     }
     
                     .project-details {
                         grid-row: 1/-1;
                         grid-column: 2/3;
+
+                        @media (width < 60rem) {
+                            grid-column: 1/2;
+                            grid-row: 5/6;
+                        }
                     }
 
                     .project-short {
                         grid-column: 2 / 3;
                         grid-row: 2 / 3;
+
+                        @media (width < 60rem) {
+                            grid-column: 1/2;
+                        }
                     }
 
                     a {
                         grid-column: 2 / 3;
                         grid-row: 3 / 4;
+
+                        @media (width < 60rem) {
+                            grid-column: 1/2;
+                        }
                     }
                 }
 

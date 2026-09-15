@@ -2,9 +2,7 @@
 import Header from "../components/Header.astro"
 import Profile from "../components/Profile.astro"
 import Project from "../components/Project.astro"
-import Service from "../components/Service.astro"
-
-
+import Footer from "../components/Footer.astro"
 ---
 
 <html lang="NL">
@@ -20,6 +18,17 @@ import Service from "../components/Service.astro"
 		<Header/>
 		<main>
 			<Profile />
+
+			<section class="white-on-green-container black-border box-shadow border-radius">
+				<h2 class="white-heading">Bio</h2>
+				<div class="green-content">
+					<p>Hi! I'm Maja Wendelin, an Amsterdam-based aspiring Frontend Developer and Designer, currently looking for an internship.</p>
+					<p>I like experimenting with different ways in which we can interact with the internet. I love using the web as a creative space to express myself.</p>
+					<p>I'm also a big advocate for web accessibility, and have worked on a few projects with and for people with a visual impairment.</p>
+					<p>I want the web to be a space for diversity and creativity, and I hope to make a mark in the world by working on this goal.</p>
+				</div>
+			</section>
+
 			<section class="skills-container white-on-green-container black-border box-shadow border-radius">
 				<div class="white-heading">
 					<h2>Skills</h2>
@@ -70,6 +79,8 @@ import Service from "../components/Service.astro"
 					</div>
 				</div>
 			</section>
+
+			
 			
 
 			<section class="likes-dislikes likes black-border border-radius box-shadow">
@@ -95,7 +106,7 @@ import Service from "../components/Service.astro"
 						<li>Insects</li>
 						<li>Seafood</li>
 						<li>Artificial Intelligence</li>
-						<li>Capitalism (though I accept that I live in it)</li>
+						<li>Capitalism</li>
 					</ul>
 				</div>
 			</section>
@@ -254,46 +265,29 @@ import Service from "../components/Service.astro"
 						</div>
 					</Project>
 	
-					<!-- <Project
-						title="Praktikum"
+					<Project
+						title="Internship"
 						imgSrc="static/media/baden-airpark.png"
 						imgAlt="The homepage of an airline, with the flight search showing."
 						pageLink="https://www.baden-airpark.de/"
 					>
 						<p slot="short">
-							Accessibility work on the Baden Airpark Website.
+							Helping with accessibility work on, among other things, the Baden Airpark Website.
 						</p>
 	
 						<div slot="long">
 							<p>Within the course of an internship I did at <a href="https://www.nova-web.de/">Nova Digital</a>, I got to work on the accessibility on a number of their websites.</p>
 							<p>The most extensive work I did was on the Baden Airpark website.</p>
-							<p>I did an accessibility audit and then worked on </p>
+							<p>I did an accessibility audit that I also presented to the customer, and then helped on implementing some of the changes (the nature of which I am not allowed to share 🙂).</p>
 						</div>
-					</Project> -->
+					</Project>
 				</div>
 
 			</section>
 
-			<section class="services">
-				<h2 class="h2-container black-border box-shadow border-radius">Services</h2>
-				<Service
-					title="Custom WordPress Websites"
-				>
-					<p>bla</p>
-				</Service>
-
-				<Service
-					title="Accessibility Audits"
-				>
-					<p>bla</p>
-				</Service>
-
-			</section>
-
-
-
-
 		</main>
+
+		<Footer></Footer>
 	</body>
 	<script src="/assets/js/index.js" is:inline></script>
 </html>
