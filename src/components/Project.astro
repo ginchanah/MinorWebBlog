@@ -21,22 +21,14 @@ const {
 
 
             <div class="project-short">
-                <slot name="short" />
+                <em><slot name="short" /></em>
             </div>
-    
-            <a href={pageLink}>Visit the site!</a>
-        
-            <details class="project-details" name="projects">
-                <summary class="project-toggle">
-                    <div class="visually-hidden">
-                        Read more
-                    </div>
-                </summary>
-        
-                <div class="project-long">
-                    <slot name="long" />
-                </div>
-            </details>
+            
+            <div class="project-long">
+                <slot name="long" />
+            </div>
+
+            <a class="visit-site" href={pageLink}>Visit the site!</a>
         </div>
     </div>
 
